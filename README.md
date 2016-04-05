@@ -18,7 +18,7 @@ Hence:
 
 1. kube-dns add-on needs to be deleted
 2. Not sure how kubelet proxies need to be configured so they don't perform ns lookups?
-3. service IPs need to be linked to service names via other ways, preferably etc/hosts or WAR manifest. 
+3. service IPs need to be linked to service names via other ways, preferably etc/hosts or configuration file of a WAR archive. 
 
 ## Services deployed
 
