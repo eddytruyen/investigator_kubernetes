@@ -22,14 +22,17 @@ Hence:
 
 ## Services deployed
 
+Externally exposed services are currently of type `NodePort`. type `LoadBalancer` is not possible currently. See https://github.com/eddytruyen/kubernetes_on_openstack/wiki/How-to-expose-a-kubernetes-cluster-of-tomcat-servers-via-an-external-load-balancer-in-Openstack%3F for more information how to manually configure a load balancer in openstack.
+
+### Tomcat 8.32 - jre7  service
+yaml files: https://github.com/eddytruyen/kubernetes_on_openstack/tree/master/kube-yaml-files-of-services/tomcat
+
+See https://github.com/eddytruyen/kubernetes_on_openstack/wiki/How-to-expose-a-kubernetes-cluster-of-tomcat-servers-via-an-external-load-balancer-in-Openstack%3F for more information how to manually configure a load balancer in openstack.
+
 ### Mongo 
 See https://github.com/eddytruyen/kubernetes_on_openstack/tree/master/kube-yaml-files-of-services/mongo
 
-### Tomcat 8.32 - jre7  service
-See https://github.com/eddytruyen/kubernetes_on_openstack/tree/master/kube-yaml-files-of-services/tomcat
-
-
-### NodeJS Example app using Mongo service
+Yaml files: https://github.com/eddytruyen/kubernetes_on_openstack/tree/master/kube-yaml-files-of-services/mongo
 
 The mongo service is deployed as follows. First create the claim for a persistent volume. In this case a simple persistent volume has been chosen, namely a host path.
 
@@ -38,6 +41,8 @@ Then label a node of the kubernetes cluster on which you want to deploy the mong
 Then create the service. The service is of type `NodePort` in order to ensure that the mongodb instance can be accessed from an external floating IP. (type `LoadBalancer` is not possible currently. See https://github.com/eddytruyen/kubernetes_on_openstack/wiki/How-to-expose-a-kubernetes-cluster-of-tomcat-servers-via-an-external-load-balancer-in-Openstack%3F for more information how to migitate this issue)
 
 Then create the mongodb controller.
+
+Finally create the persisent volume.
 
 To deploy a sample web app that uses the Mongo service, see: https://medium.com/google-cloud/running-a-mean-stack-on-google-cloud-platform-with-kubernetes-149ca81c2b5d#.tgppaweqi. This article is written for deployment on top of google cloud. To deploy on openstack, do as follows:
 - create a docker repository named `decomads`in any docker registry, in this case I use docker hub
