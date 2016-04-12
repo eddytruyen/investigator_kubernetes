@@ -31,9 +31,13 @@ See https://github.com/eddytruyen/kubernetes_on_openstack/tree/master/kube-yaml-
 
 ### NodeJS Example app using Mongo service
 
-See: https://medium.com/google-cloud/running-a-mean-stack-on-google-cloud-platform-with-kubernetes-149ca81c2b5d#.tgppaweqi
+See: https://medium.com/google-cloud/running-a-mean-stack-on-google-cloud-platform-with-kubernetes-149ca81c2b5d#.tgppaweqi. This article is written for deployment on top of google cloud. To deploy on openstack, do as follows:
+- create a docker repository named `decomads`in any docker registry, in this case I use docker hub
+- `docker build -t myapp`
+- `docker login`
+- `docker push decomads/myapp` 
 
-As service discovery does not work (see failed kube-dns add-on), find other means for resolving the mongo service into an IP. 
+As service discovery does not work (see failed kube-dns add-on), find other means for resolving the mongo service into an IP. In this case I simply put the IP of the Mongo service in the code of the `app.js` file.
 
 See https://github.com/eddytruyen/kubernetes_on_openstack/tree/master/kube-yaml-files-of-services/NodeJS-Sample-App for Docker and yaml files.
 
