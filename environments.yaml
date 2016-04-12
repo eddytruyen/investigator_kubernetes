@@ -1,0 +1,40 @@
+# To use Juju with your Openstack cloud:
+#    1. Run: apt-get install juju 2. Copy this file to 
+#    $HOME/.juju/environments.yaml 3. Complete any empty fields 4. Run 
+#    'juju bootstrap' and deploy services!
+#
+# To find out more about juju visit http://juju.ubuntu.com
+environments:
+  openstack:
+    type: openstack
+    auth-url: http://stratus.cs.kuleuven.be:5000/v2.0
+    auth-mode: userpass
+    use-floating-ip: true
+    # Please provide the UUID of the network to use if you have more 
+    # than one network configured for your tenant. network:
+    region: RegionOne
+    username: eddy
+    network: ebf4fe25-7da3-4cc9-ba3c-50e270061c38
+    use-default-secgroup: true
+    # Please provide the password you use to access the OpenStack cloud.
+    password: garage4bout7Monday
+    tenant-name: eddy
+    image-metadata-url: https://people.cs.kuleuven.be/~eddy.truyen/images
+    agent-metadata-url: https://people.cs.kuleuven.be/~eddy.truyen/tools
+
+  openstack2:
+    type: openstack
+    auth-url: http://stratus.cs.kuleuven.be:5000/v2.0
+    auth-mode: userpass
+    use-floating-ip: true
+    # Please provide the UUID of the network to use if you have more
+    # than one network configured for your tenant. network:
+    region: RegionOne
+    username: eddy
+    network: ebf4fe25-7da3-4cc9-ba3c-50e270061c38
+    use-default-secgroup: true
+    # Please provide the password you use to access the OpenStack cloud.
+    password: garage4bout7Monday
+    tenant-name: eddy
+    image-metadata-url: https://people.cs.kuleuven.be/~eddy.truyen/images
+    agent-metadata-url: https://people.cs.kuleuven.be/~eddy.truyen/tools
