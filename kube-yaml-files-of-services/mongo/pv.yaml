@@ -9,7 +9,7 @@
       - ReadWriteOnce
     persistentVolumeReclaimPolicy: Recycle
     hostPath:
-      path: /var/lib/mongodb
+      path: /data/db
  
 
 
