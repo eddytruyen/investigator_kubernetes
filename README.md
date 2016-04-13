@@ -46,7 +46,7 @@ Finally create the persisent volume.
 
 To deploy a sample web app that uses the Mongo service, see: https://medium.com/google-cloud/running-a-mean-stack-on-google-cloud-platform-with-kubernetes-149ca81c2b5d#.tgppaweqi. This article is written for deployment on top of google cloud. To deploy on openstack, do as follows:
 - create a docker repository named `decomads`in any docker registry, in this case I use docker hub
-- `docker build -t myapp`
+- `docker build -t myapp .`
 - `docker login`
 - `docker push decomads/myapp` 
 
