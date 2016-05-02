@@ -32,17 +32,12 @@ See https://github.com/eddytruyen/kubernetes_on_openstack/wiki/How-to-expose-a-k
 ### Mongo 
 See https://github.com/eddytruyen/kubernetes_on_openstack/tree/master/kube-yaml-files-of-services/mongo
 
-Yaml files: https://github.com/eddytruyen/kubernetes_on_openstack/tree/master/kube-yaml-files-of-services/mongo
-
-The mongo service is deployed as follows. First create the claim for a persistent volume. In this case a simple persistent volume has been chosen, namely a host path.
-
-Then label a node of the kubernetes cluster on which you want to deploy the mongod instance: `kubectl label nodes <node-name> mongodbHost="true"`. The mongod instance must always be deployed on that node because it is linked to a directory on the node where the data is stored. 
+First label a node of the kubernetes cluster on which you want to deploy the mongod instance: `kubectl label nodes <node-name> mongodbHost="true"`. The mongod instance must always be deployed on that node because it is linked to a directory on the node where the data is stored. 
 
 Then create the service. The service is of type `NodePort` in order to ensure that the mongodb instance can be accessed from an external floating IP. (type `LoadBalancer` is not possible currently. See https://github.com/eddytruyen/kubernetes_on_openstack/wiki/How-to-expose-a-kubernetes-cluster-of-tomcat-servers-via-an-external-load-balancer-in-Openstack%3F for more information how to migitate this issue)
 
-Then create the mongodb controller.
+Then create the mongodb_with_hostpath_volume controller.
 
-Finally create the persisent volume.
 
 To deploy a sample web app that uses the Mongo service, see: https://medium.com/google-cloud/running-a-mean-stack-on-google-cloud-platform-with-kubernetes-149ca81c2b5d#.tgppaweqi. This article is written for deployment on top of google cloud. To deploy on openstack, do as follows:
 - create a docker repository named `decomads`in any docker registry, in this case I use docker hub
