@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: mongo-node-1
-          image: decomads/mongo:3.2.4
+          image: mongo:3.2.4
           command:
             - mongod
             - "--replSet"
