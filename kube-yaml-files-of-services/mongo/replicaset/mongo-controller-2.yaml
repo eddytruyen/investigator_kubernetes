@@ -1,0 +1,38 @@
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: mongo-2
+spec:
+  replicas: 1
+  selector:
+    name: mongo-node-2
+  template:
+    metadata:
+      labels:
+        name: mongo-node-2
+    spec:
+      containers:
+        - name: mongo-node-2
+          image: mongo:3.2.4
+          command:
+            - mongod
+            - "--replSet"
+            - rs0
+            - "--logappend"
+            - "--logpath"
+            - /var/log/mongodb/mongod.log
+            - "--bind_ip"
+            - 0.0.0.0
+          ports:
+          - name: mongo
+            containerPort: 27017
+            hostPort: 27017
+          volumeMounts:
+          - name: mypd
+            mountPath: /data/db
+      nodeSelector:
+        mongodbHost-2: "true"
+      volumes:
+        - name: mypd
+          hostPath:
+            path: /data/db
