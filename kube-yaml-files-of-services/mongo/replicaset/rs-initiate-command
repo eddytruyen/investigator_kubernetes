@@ -5,17 +5,41 @@ rs.initiate({
           {
                "_id" : 0,
                "host" : "172.17.13.46:30155",
-               "priority" : 10
+               "priority" : 1,
+	       "arbiterOnly" : false,
+               "buildIndexes" : true,
+               "hidden" : false,
+               "slaveDelay" : NumberLong(0),
+               "votes" : 1
           },
           {
                "_id" : 1,
                "host" : "172.17.13.44:30839",
-               "priority" : 9
+               "priority" : 1,
+               "arbiterOnly" : false,
+               "buildIndexes" : true,
+               "hidden" : false,
+               "slaveDelay" : NumberLong(0),
+               "votes" : 1
+
           },
           {
                "_id" : 2,
                "host" : "172.17.13.45:31954",
-               "priority" : 8
+               "priority" : 1,
+               "arbiterOnly" : false,
+               "buildIndexes" : true,
+               "hidden" : false,
+               "slaveDelay" : NumberLong(0),
+               "votes" : 1
           }
      ]
+     "settings" : {
+              "chainingAllowed" : true,
+              "heartbeatIntervalMillis" : 2000,
+              "heartbeatTimeoutSecs" : 10,
+              "electionTimeoutMillis" : 10000,
+        }
+
 });
+
