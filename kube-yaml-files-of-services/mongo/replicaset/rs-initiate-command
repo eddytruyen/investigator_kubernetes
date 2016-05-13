@@ -1,6 +1,6 @@
 rs.initiate({
      "_id" : "rs0",
-     "version":1,
+     "version" : 1,
      "members" : [
           {
                "_id" : 0,
@@ -33,12 +33,12 @@ rs.initiate({
                "slaveDelay" : NumberLong(0),
                "votes" : 1
           }
-     ]
+     ],
      "settings" : {
               "chainingAllowed" : true,
               "heartbeatIntervalMillis" : 2000,
               "heartbeatTimeoutSecs" : 10,
-              "electionTimeoutMillis" : 10000,
+              "electionTimeoutMillis" : 10000
         }
 
 });
