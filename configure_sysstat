@@ -1,5 +1,6 @@
 #execute as root
 cp sysstat-2 /etc/default/sysstat
 cp sysstat-1 /etc/cron.d/sysstat
+cp sysstat-3 /etc/sysstat/sysstat
 exit
 
