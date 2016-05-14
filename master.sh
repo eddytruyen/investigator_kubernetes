@@ -236,7 +236,7 @@ start_k8s(){
         --restart=on-failure \
         gcr.io/google_containers/hyperkube:v${K8S_VERSION} \
         /hyperkube proxy \
-            --master=http://${MASTER_IP}:8080 \
+            --master=http://127.0.0.1:8080 \
             --v=2
 }
 
