@@ -1,5 +1,3 @@
 sudo apt-get install sysstat -y
-scp ubuntu@172.17.13.172:/etc/cron.d/sysstat sysstat-1
-scp ubuntu@172.17.13.172:/etc/default/sysstat sysstat-2
 
 
