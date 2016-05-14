@@ -20,5 +20,6 @@ environments:
     password: 
     tenant-name: eddy
     image-metadata-url: https://people.cs.kuleuven.be/~eddy.truyen/images
-    agent-metadata-url: https://people.cs.kuleuven.be/~eddy.truyen/tools
+    agent-metadata-url: https://streams.canonical.com/juju/tools/
+    series: trusty
 
