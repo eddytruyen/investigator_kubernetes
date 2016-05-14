@@ -1,0 +1,7 @@
+#execute as root
+cp sysstat-2 /etc/default/sysstat
+rm sysstat-2
+cp sysstat-1 /etc/cron.d/sysstat
+rm sysstat-1
+exit
+
