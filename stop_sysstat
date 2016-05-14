@@ -1,1 +1,1 @@
-sudo service stop sysstat
+sudo service sysstat stop
