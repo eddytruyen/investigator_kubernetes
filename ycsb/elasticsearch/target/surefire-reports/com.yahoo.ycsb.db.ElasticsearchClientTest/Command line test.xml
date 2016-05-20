@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="artemis" name="com.yahoo.ycsb.db.ElasticsearchClientTest" tests="5" failures="0" timestamp="20 May 2016 12:04:21 GMT" time="5.503" errors="0">
-  <testcase name="testDelete" time="0.005" classname="com.yahoo.ycsb.db.ElasticsearchClientTest"/>
-  <testcase name="testInsert" time="0.003" classname="com.yahoo.ycsb.db.ElasticsearchClientTest"/>
-  <testcase name="testRead" time="0.006" classname="com.yahoo.ycsb.db.ElasticsearchClientTest"/>
-  <testcase name="testScan" time="0.071" classname="com.yahoo.ycsb.db.ElasticsearchClientTest"/>
-  <testcase name="testUpdate" time="0.008" classname="com.yahoo.ycsb.db.ElasticsearchClientTest"/>
-</testsuite>
