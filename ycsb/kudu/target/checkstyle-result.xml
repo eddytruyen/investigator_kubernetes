@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.1.1">
+<file name="/Users/vincent/Documents/Kubernetes evaluation/ycsb/kudu/src/main/java/com/yahoo/ycsb/db/KuduYCSBClient.java">
+</file>
+<file name="/Users/vincent/Documents/Kubernetes evaluation/ycsb/kudu/src/main/java/com/yahoo/ycsb/db/package-info.java">
+</file>
+</checkstyle>
