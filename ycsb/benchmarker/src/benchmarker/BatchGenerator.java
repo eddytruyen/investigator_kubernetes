@@ -12,20 +12,22 @@ public class BatchGenerator {
 	
 	// mongodb://db1.example.net,db2.example.net:2500/?replicaSet=test
 	
-	private final static String OPTIONS = "-p mongodb.upsert=true"; // -p mongodb.writeConcern=replica_acknowledged -p mongodb.readPreference=nearest";
+	private final static String OPTIONS = "-p mongodb.upsert=true -p mongodb.writeConcern=acknowledged"; // -p mongodb.writeConcern=replica_acknowledged -p mongodb.readPreference=nearest";
 	
 	private final static int THROUGHPUT = 300;
 	
-	private final static int NR_OPERATIONS = 100;
+	private final static int NR_OPERATIONS = 1000 * 200;
 	
 	// ~10GB of data
-	private final static int NR_RECORDS = 100 * 10;
+	private final static int NR_RECORDS = 1000 * 1000;
 	
 	private final static int SAMPLE_RATE = 10;
 	
-	private final static int TIMEOUT = 2;
+	private final static int READ_WARMUP = 40000;
 	
-	private final static int WORKLOAD_TIMEOUT = 2;
+	private final static int TIMEOUT = 600;
+	
+	private final static int WORKLOAD_TIMEOUT = 300;
 	
 	private final static boolean REPLICA_SET = false;
 	
@@ -57,11 +59,11 @@ public class BatchGenerator {
 
 		local.add("localhost:27017");
 		
-		databaseSetups.put("localhost", local);
-//		databaseSetups.put("1-native", native_mongo );
-//		databaseSetups.put("1-docker", docker);
-//		databaseSetups.put("1-swarm", swarm);
-//		databaseSetups.put("1-kube", kube);
+//		databaseSetups.put("localhost", local);
+		databaseSetups.put("1-native", native_mongo );
+		databaseSetups.put("1-docker", docker);
+		databaseSetups.put("1-swarm", swarm);
+		databaseSetups.put("1-kube", kube);
 		
 		
 		start();
@@ -83,6 +85,8 @@ public class BatchGenerator {
 			dropDatabase(deployment);
 			loadDatabase(deployment, "workloada", NR_RECORDS);
 			
+			startWarmUp(deployment);
+			
 			runWorkloads(deployment, "workloada", NR_OPERATIONS, SAMPLE_RATE);
 			runWorkloads(deployment, "workloadb", NR_OPERATIONS, SAMPLE_RATE);
 			runWorkloads(deployment, "workloadc", NR_OPERATIONS, SAMPLE_RATE);
@@ -97,11 +101,16 @@ public class BatchGenerator {
 	}
 	
 	
+	private void startWarmUp(String deployment) {
+		runWorkloadOnce(deployment, "workloadc", READ_WARMUP, false, false);
+		
+	}
 	/** 
 	 * Executes a workload several times for a specific deployment.
 	 */
 	private void runWorkloads(String deployment, String workload, int nr_operations, int samples) {
 		for (int i=0; i < samples; i++) {
+			startWarmUp(deployment);
 			runWorkloadOnce(deployment, workload, nr_operations, false);
 		}
 	}
@@ -110,6 +119,10 @@ public class BatchGenerator {
 	 * Runs a single workload once.
 	 */
 	private void runWorkloadOnce(String deployment, String workload, int nr_operations, boolean loadPhase) {
+		runWorkloadOnce(deployment, workload, nr_operations, loadPhase, true);
+	}
+	
+	private void runWorkloadOnce(String deployment, String workload, int nr_operations, boolean loadPhase, boolean timeout) {
 		Random rnd = new Random();
 		
 		String loadStr = "run";
@@ -118,7 +131,12 @@ public class BatchGenerator {
 			loadStr = "load";
 		
 		String command = "python ./bin/ycsb " +  loadStr + " mongodb" +  " -P workloads/" + workload 
-				+ " -threads " + 1 + " -target " + THROUGHPUT + " -p recordcount=" + NR_RECORDS + " -p operationcount=" + nr_operations + " " +  OPTIONS;
+				 + " -p recordcount=" + NR_RECORDS + " -p operationcount=" + nr_operations + " " +  OPTIONS;
+		
+		if (!loadPhase)
+			command +=  " -target " + THROUGHPUT + " -threads " + 1;
+		else
+			command +=  " -threads 10";
 		
 		command += " " + "-p mongodb.url=mongodb://"+ databaseSetups.get(deployment).get(0) + "/ycsb";
 		
@@ -134,9 +152,9 @@ public class BatchGenerator {
 		
 		System.out.println(outputCmd);
 		
-		if(loadStr=="load")
+		if(loadStr=="load" && timeout)
 			timeout();
-		else if(loadStr=="run")
+		else if(loadStr=="run" && timeout)
 			timeout();
 	}
 	/**
@@ -158,7 +176,7 @@ public class BatchGenerator {
 		// --eval "db.collection.remove();"
 		// verschillende usertables oplijsten
 		
-		String cmd = "mongo " + deployment + " --eval \"db." + collection + ".remove({})\" --host " + deployment;
+		String cmd = "mongo ycsb --eval \"db." + collection + ".remove({})\" --host " + databaseSetups.get(deployment).get(0) ;
 		
 		System.out.println(cmd);
 		System.out.println(SLEEP_CMD + " " + TIMEOUT);

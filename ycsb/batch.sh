@@ -1,128 +1,756 @@
-mongo localhost --eval "db.usertable.remove({})" --host localhost
-sleep 2
-python ./bin/ycsb load mongodb -P workloads/workloada -threads 1 -target 300 -p recordcount=1000 -p operationcount=1000 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-load-workloada-1-records-1000-rnd-2128279524.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloada -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloada-1-ops-100-rnd-1898993044.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloada -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloada-1-ops-100-rnd-399916521.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloada -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloada-1-ops-100-rnd-2070236740.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloada -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloada-1-ops-100-rnd-616072426.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloada -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloada-1-ops-100-rnd-1517200865.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloada -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloada-1-ops-100-rnd-1480408844.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloada -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloada-1-ops-100-rnd-1466815772.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloada -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloada-1-ops-100-rnd-1059852766.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloada -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloada-1-ops-100-rnd-1859711974.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloada -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloada-1-ops-100-rnd-1358472757.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadb -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadb-1-ops-100-rnd-602904606.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadb -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadb-1-ops-100-rnd-2067139844.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadb -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadb-1-ops-100-rnd-795159608.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadb -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadb-1-ops-100-rnd-1069097600.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadb -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadb-1-ops-100-rnd-88832704.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadb -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadb-1-ops-100-rnd-401099774.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadb -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadb-1-ops-100-rnd-1057980744.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadb -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadb-1-ops-100-rnd-1808600996.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadb -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadb-1-ops-100-rnd-761917333.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadb -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadb-1-ops-100-rnd-2082048627.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadc -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadc-1-ops-100-rnd-1119578761.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadc -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadc-1-ops-100-rnd-1857444613.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadc -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadc-1-ops-100-rnd-926847481.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadc -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadc-1-ops-100-rnd-504549779.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadc -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadc-1-ops-100-rnd-2090449681.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadc -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadc-1-ops-100-rnd-819435887.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadc -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadc-1-ops-100-rnd-929516543.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadc -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadc-1-ops-100-rnd-2047205021.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadc -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadc-1-ops-100-rnd-1222594482.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadc -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadc-1-ops-100-rnd-677461718.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadf -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadf-1-ops-100-rnd-357793838.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadf -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadf-1-ops-100-rnd-231108434.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadf -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadf-1-ops-100-rnd-1800730264.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadf -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadf-1-ops-100-rnd-1593352531.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadf -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadf-1-ops-100-rnd-640050965.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadf -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadf-1-ops-100-rnd-328704979.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadf -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadf-1-ops-100-rnd-524418064.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadf -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadf-1-ops-100-rnd-1222151633.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadf -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadf-1-ops-100-rnd-1920636280.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadf -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadf-1-ops-100-rnd-1221336376.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadd -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadd-1-ops-100-rnd-1862380425.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadd -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadd-1-ops-100-rnd-1654675936.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadd -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadd-1-ops-100-rnd-147805632.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadd -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadd-1-ops-100-rnd-1867584512.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadd -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadd-1-ops-100-rnd-1978520404.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadd -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadd-1-ops-100-rnd-1563768942.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadd -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadd-1-ops-100-rnd-226740882.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadd -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadd-1-ops-100-rnd-1518527230.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadd -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadd-1-ops-100-rnd-520309225.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloadd -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloadd-1-ops-100-rnd-1193517305.txt
-sleep 2
-mongo localhost --eval "db.usertable.remove({})" --host localhost
-sleep 2
-python ./bin/ycsb load mongodb -P workloads/workloade -threads 1 -target 300 -p recordcount=1000 -p operationcount=1000 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-load-workloade-1-records-1000-rnd-82779264.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloade -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloade-1-ops-100-rnd-812249772.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloade -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloade-1-ops-100-rnd-1994769269.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloade -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloade-1-ops-100-rnd-1309043694.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloade -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloade-1-ops-100-rnd-149355513.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloade -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloade-1-ops-100-rnd-1909107040.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloade -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloade-1-ops-100-rnd-947953140.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloade -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloade-1-ops-100-rnd-123573866.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloade -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloade-1-ops-100-rnd-1571604818.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloade -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloade-1-ops-100-rnd-601178172.txt
-sleep 2
-python ./bin/ycsb run mongodb -P workloads/workloade -threads 1 -target 300 -p recordcount=1000 -p operationcount=100 -p mongodb.upsert=true -p mongodb.url=mongodb://localhost:27017/ycsb > results/localhost/localhost-run-workloade-1-ops-100-rnd-1693088969.txt
-sleep 2
+mongo ycsb --eval "db.usertable.remove({})" --host 172.17.13.47:27017
+sleep 600
+python ./bin/ycsb load mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=1000000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -threads 10 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-load-workloada-1-records-1000000-rnd-1368588682.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1695279208.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-762546004.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloada-1-ops-200000-rnd-1208829846.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1287149081.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloada-1-ops-200000-rnd-234094172.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-188492291.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloada-1-ops-200000-rnd-1156865645.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1646828021.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloada-1-ops-200000-rnd-829205467.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1550626706.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloada-1-ops-200000-rnd-1550268574.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-675044926.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloada-1-ops-200000-rnd-1346071160.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-140785972.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloada-1-ops-200000-rnd-1946973190.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1173173108.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloada-1-ops-200000-rnd-697328009.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-306580941.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloada-1-ops-200000-rnd-1287941775.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1726362624.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloada-1-ops-200000-rnd-642307023.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1570583844.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadb-1-ops-200000-rnd-56478226.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-746013891.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadb-1-ops-200000-rnd-1741759176.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-666639181.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadb-1-ops-200000-rnd-1302421303.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1039272129.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadb-1-ops-200000-rnd-299389660.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1726443350.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadb-1-ops-200000-rnd-1774338389.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1586272300.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadb-1-ops-200000-rnd-1601428287.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1850979452.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadb-1-ops-200000-rnd-1995000994.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1419761183.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadb-1-ops-200000-rnd-46770896.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-831991478.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadb-1-ops-200000-rnd-7350337.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1749261839.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadb-1-ops-200000-rnd-1731108699.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1373300437.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1921067492.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-2127056161.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-2040793405.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-850439169.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-33720425.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1549745245.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1973266112.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-100964577.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1769329741.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-609720755.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-516394223.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1543451539.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-385751943.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1949815534.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-2086052088.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-628139438.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1095252656.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1467114073.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1646988862.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1784401276.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadf-1-ops-200000-rnd-1241331811.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-35601430.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadf-1-ops-200000-rnd-346203961.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-709844481.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadf-1-ops-200000-rnd-978865334.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1161919067.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadf-1-ops-200000-rnd-257201672.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-602574786.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadf-1-ops-200000-rnd-321154888.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1956086032.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadf-1-ops-200000-rnd-853723706.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-319944373.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadf-1-ops-200000-rnd-1863417626.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-46455657.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadf-1-ops-200000-rnd-110011370.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-2102330094.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadf-1-ops-200000-rnd-752524634.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1649647654.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadf-1-ops-200000-rnd-128514421.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-165938719.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadd-1-ops-200000-rnd-953652447.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1361918920.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadd-1-ops-200000-rnd-1367529150.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1563309793.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadd-1-ops-200000-rnd-1780548306.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-384492528.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadd-1-ops-200000-rnd-765792114.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-2040239065.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadd-1-ops-200000-rnd-1803878752.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1213651587.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadd-1-ops-200000-rnd-1121473500.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-499265162.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadd-1-ops-200000-rnd-847510589.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1724570064.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadd-1-ops-200000-rnd-146513693.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-873081266.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadd-1-ops-200000-rnd-2128180784.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-347302559.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadd-1-ops-200000-rnd-417697113.txt
+sleep 300
+mongo ycsb --eval "db.usertable.remove({})" --host 172.17.13.47:27017
+sleep 600
+python ./bin/ycsb load mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=1000000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -threads 10 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-load-workloade-1-records-1000000-rnd-850983637.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1940706925.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloade-1-ops-200000-rnd-501493214.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-949420603.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloade-1-ops-200000-rnd-1553657618.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-568944002.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloade-1-ops-200000-rnd-1891539313.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-659079542.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloade-1-ops-200000-rnd-1957204410.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1041945924.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloade-1-ops-200000-rnd-1213296774.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1996973996.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloade-1-ops-200000-rnd-2077443491.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-1544458826.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloade-1-ops-200000-rnd-880188823.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-497267123.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloade-1-ops-200000-rnd-41447899.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-179508188.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloade-1-ops-200000-rnd-1011489442.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloadc-1-ops-200000-rnd-264002114.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.47:27017/ycsb > results/1-kube/1-kube-run-workloade-1-ops-200000-rnd-1626458818.txt
+sleep 300
+mongo ycsb --eval "db.usertable.remove({})" --host 172.17.13.52:27017
+sleep 600
+python ./bin/ycsb load mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=1000000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -threads 10 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-load-workloada-1-records-1000000-rnd-1987267353.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1792157758.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1654764938.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloada-1-ops-200000-rnd-53269057.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1505692149.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloada-1-ops-200000-rnd-264698175.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1862976374.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloada-1-ops-200000-rnd-1818469508.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-709362215.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloada-1-ops-200000-rnd-1097193587.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1167523398.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloada-1-ops-200000-rnd-481889213.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-758136338.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloada-1-ops-200000-rnd-641865434.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-838506253.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloada-1-ops-200000-rnd-1076267593.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1416408244.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloada-1-ops-200000-rnd-895935704.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-392807339.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloada-1-ops-200000-rnd-1707666512.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1800776981.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloada-1-ops-200000-rnd-679632678.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1426041765.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadb-1-ops-200000-rnd-1211886771.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-481717769.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadb-1-ops-200000-rnd-1541187059.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1886970786.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadb-1-ops-200000-rnd-2130759424.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1980464838.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadb-1-ops-200000-rnd-1555109896.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1752557527.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadb-1-ops-200000-rnd-2105735386.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-407625388.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadb-1-ops-200000-rnd-1234919940.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1762178097.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadb-1-ops-200000-rnd-2028812086.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-639516631.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadb-1-ops-200000-rnd-394151662.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1226251439.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadb-1-ops-200000-rnd-1859053985.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-392675877.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadb-1-ops-200000-rnd-1392205515.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1001745975.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-232735636.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1735414949.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1342073978.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-141934490.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-941710301.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1564221801.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-38733351.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1520576501.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-455115473.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-155051104.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-69240211.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1949602524.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1871909957.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1693459488.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1679860562.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-2146660435.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-212894060.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1559255160.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-824451265.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1575497484.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadf-1-ops-200000-rnd-174248710.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1798176834.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadf-1-ops-200000-rnd-425840945.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-936725687.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadf-1-ops-200000-rnd-2114342733.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-157966057.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadf-1-ops-200000-rnd-2142763878.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1188699706.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadf-1-ops-200000-rnd-958319446.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-895023841.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadf-1-ops-200000-rnd-1842664569.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1304175909.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadf-1-ops-200000-rnd-2005051792.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1842232655.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadf-1-ops-200000-rnd-1686469872.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-788649719.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadf-1-ops-200000-rnd-443643892.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1808031454.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadf-1-ops-200000-rnd-1288097548.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-779340767.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadd-1-ops-200000-rnd-1171068412.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1823898560.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadd-1-ops-200000-rnd-714378121.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1968533043.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadd-1-ops-200000-rnd-69069094.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-737139588.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadd-1-ops-200000-rnd-1112200515.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1483043855.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadd-1-ops-200000-rnd-1582380301.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1359777236.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadd-1-ops-200000-rnd-885333817.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1849317419.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadd-1-ops-200000-rnd-927349372.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1377323167.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadd-1-ops-200000-rnd-564597930.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-136961211.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadd-1-ops-200000-rnd-1441515113.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1318259814.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadd-1-ops-200000-rnd-1483816359.txt
+sleep 300
+mongo ycsb --eval "db.usertable.remove({})" --host 172.17.13.52:27017
+sleep 600
+python ./bin/ycsb load mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=1000000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -threads 10 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-load-workloade-1-records-1000000-rnd-979960195.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-11521500.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloade-1-ops-200000-rnd-122813536.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-836860714.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloade-1-ops-200000-rnd-598932000.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1325280279.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloade-1-ops-200000-rnd-1404569478.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-202535235.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloade-1-ops-200000-rnd-1173979242.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-873061037.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloade-1-ops-200000-rnd-687735255.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-701554962.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloade-1-ops-200000-rnd-2124419744.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-293307041.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloade-1-ops-200000-rnd-469716039.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1331618563.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloade-1-ops-200000-rnd-725312080.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-1025682453.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloade-1-ops-200000-rnd-205622470.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloadc-1-ops-200000-rnd-123409481.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.52:27017/ycsb > results/1-native/1-native-run-workloade-1-ops-200000-rnd-653108388.txt
+sleep 300
+mongo ycsb --eval "db.usertable.remove({})" --host 172.17.13.54:27017
+sleep 600
+python ./bin/ycsb load mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=1000000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -threads 10 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-load-workloada-1-records-1000000-rnd-1930505333.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1627214729.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-687842089.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloada-1-ops-200000-rnd-1311223933.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-958139218.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloada-1-ops-200000-rnd-755378214.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1898110709.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloada-1-ops-200000-rnd-2042804545.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-26101884.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloada-1-ops-200000-rnd-1747751567.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-74318175.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloada-1-ops-200000-rnd-1113529523.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-785816832.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloada-1-ops-200000-rnd-1127619343.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-647436634.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloada-1-ops-200000-rnd-1616991789.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-279785712.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloada-1-ops-200000-rnd-828131170.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-140624968.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloada-1-ops-200000-rnd-12370142.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-2134169770.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloada-1-ops-200000-rnd-587251370.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-896837162.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadb-1-ops-200000-rnd-1291890888.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-864283866.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadb-1-ops-200000-rnd-1280959363.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-770047076.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadb-1-ops-200000-rnd-2136745156.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-832507865.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadb-1-ops-200000-rnd-661568028.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-2037006877.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadb-1-ops-200000-rnd-720295148.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1630566181.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadb-1-ops-200000-rnd-1299123078.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-307264049.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadb-1-ops-200000-rnd-1728493195.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-625603168.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadb-1-ops-200000-rnd-26882649.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-2120468351.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadb-1-ops-200000-rnd-826937264.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1892630796.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadb-1-ops-200000-rnd-1622545467.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-293217605.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-20508402.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-398131528.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1360093831.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-347211981.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1123304011.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1524493518.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1858206728.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-598182201.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1910012422.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-806823652.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-644492407.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-426486755.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-524908373.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1901164375.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1147505453.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1187465451.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1034316696.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1742061968.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-364077345.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-807261089.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadf-1-ops-200000-rnd-25591735.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1527668820.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadf-1-ops-200000-rnd-525390567.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-323544158.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadf-1-ops-200000-rnd-593215730.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-2082934185.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadf-1-ops-200000-rnd-1989816305.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1734615443.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadf-1-ops-200000-rnd-172593032.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-965200588.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadf-1-ops-200000-rnd-1500100549.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-145800307.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadf-1-ops-200000-rnd-1853837731.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1340279421.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadf-1-ops-200000-rnd-755490170.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1716580554.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadf-1-ops-200000-rnd-382299061.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1933564488.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadf-1-ops-200000-rnd-183345187.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-2102856436.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadd-1-ops-200000-rnd-2060430264.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-256216012.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadd-1-ops-200000-rnd-599897839.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-225350544.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadd-1-ops-200000-rnd-922468841.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-883299837.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadd-1-ops-200000-rnd-1333623423.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-852931309.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadd-1-ops-200000-rnd-227043965.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-409649387.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadd-1-ops-200000-rnd-2101700597.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-175678913.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadd-1-ops-200000-rnd-390340542.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-391814767.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadd-1-ops-200000-rnd-392644328.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1931086245.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadd-1-ops-200000-rnd-2087822966.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-410945992.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadd-1-ops-200000-rnd-87901686.txt
+sleep 300
+mongo ycsb --eval "db.usertable.remove({})" --host 172.17.13.54:27017
+sleep 600
+python ./bin/ycsb load mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=1000000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -threads 10 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-load-workloade-1-records-1000000-rnd-1805907405.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-343957829.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloade-1-ops-200000-rnd-1187664422.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1951412213.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloade-1-ops-200000-rnd-1694106656.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-413684172.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloade-1-ops-200000-rnd-189196827.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-2019650765.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloade-1-ops-200000-rnd-1169712153.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-909158356.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloade-1-ops-200000-rnd-2131960450.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-62430148.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloade-1-ops-200000-rnd-653260156.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-274186472.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloade-1-ops-200000-rnd-1025328365.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-187581359.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloade-1-ops-200000-rnd-424100625.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-1071867306.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloade-1-ops-200000-rnd-462947224.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloadc-1-ops-200000-rnd-276146508.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.54:27017/ycsb > results/1-swarm/1-swarm-run-workloade-1-ops-200000-rnd-1254902703.txt
+sleep 300
+mongo ycsb --eval "db.usertable.remove({})" --host 172.17.13.53:27017
+sleep 600
+python ./bin/ycsb load mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=1000000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -threads 10 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-load-workloada-1-records-1000000-rnd-586455203.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1137532987.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-475388689.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloada-1-ops-200000-rnd-1064554299.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1129687670.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloada-1-ops-200000-rnd-324532684.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1430810401.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloada-1-ops-200000-rnd-1062375623.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-660555781.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloada-1-ops-200000-rnd-1951302907.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1085317636.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloada-1-ops-200000-rnd-794063190.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-475566156.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloada-1-ops-200000-rnd-793232536.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-607341895.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloada-1-ops-200000-rnd-561530529.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1472082165.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloada-1-ops-200000-rnd-2035318224.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-379343198.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloada-1-ops-200000-rnd-1506124755.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-280544737.txt
+python ./bin/ycsb run mongodb -P workloads/workloada -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloada-1-ops-200000-rnd-1648193529.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-84253958.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadb-1-ops-200000-rnd-761251421.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-411427352.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadb-1-ops-200000-rnd-534534215.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1671809971.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadb-1-ops-200000-rnd-2068259144.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-265748691.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadb-1-ops-200000-rnd-1271735644.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1585850416.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadb-1-ops-200000-rnd-2114343614.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-832972282.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadb-1-ops-200000-rnd-1203992869.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-820393780.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadb-1-ops-200000-rnd-1797811587.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-911289785.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadb-1-ops-200000-rnd-2067315327.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1193842035.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadb-1-ops-200000-rnd-2036478263.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1270976676.txt
+python ./bin/ycsb run mongodb -P workloads/workloadb -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadb-1-ops-200000-rnd-827844965.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1816657716.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1110605537.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-2084837893.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1851792425.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-701974557.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1779893513.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-702766560.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1376596733.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1395090045.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-800987842.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1462045812.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-2113489793.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-2098743528.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1887498645.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1009677781.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-333545261.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-601280399.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-879123558.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-815546692.txt
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-207587088.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-556062191.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadf-1-ops-200000-rnd-1352884262.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1476518457.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadf-1-ops-200000-rnd-984910768.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-11511753.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadf-1-ops-200000-rnd-1631451556.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1370649970.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadf-1-ops-200000-rnd-494988965.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1844328304.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadf-1-ops-200000-rnd-173242337.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1786237050.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadf-1-ops-200000-rnd-1247211393.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1076908140.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadf-1-ops-200000-rnd-304180646.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1251258369.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadf-1-ops-200000-rnd-1807802741.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-2049677502.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadf-1-ops-200000-rnd-2033705434.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-862892450.txt
+python ./bin/ycsb run mongodb -P workloads/workloadf -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadf-1-ops-200000-rnd-2039074637.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-784371734.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadd-1-ops-200000-rnd-651289707.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1371921578.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadd-1-ops-200000-rnd-932392119.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-155056411.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadd-1-ops-200000-rnd-1376256312.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1349695680.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadd-1-ops-200000-rnd-580105867.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1727928493.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadd-1-ops-200000-rnd-1327617443.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-760783420.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadd-1-ops-200000-rnd-1453585535.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-616001903.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadd-1-ops-200000-rnd-308427150.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-854167033.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadd-1-ops-200000-rnd-89411652.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-407382168.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadd-1-ops-200000-rnd-1070501851.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1959627733.txt
+python ./bin/ycsb run mongodb -P workloads/workloadd -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadd-1-ops-200000-rnd-117770065.txt
+sleep 300
+mongo ycsb --eval "db.usertable.remove({})" --host 172.17.13.53:27017
+sleep 600
+python ./bin/ycsb load mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=1000000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -threads 10 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-load-workloade-1-records-1000000-rnd-662978042.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1746446093.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloade-1-ops-200000-rnd-385833514.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-315551663.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloade-1-ops-200000-rnd-1154721373.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-188664305.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloade-1-ops-200000-rnd-794630063.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-173319830.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloade-1-ops-200000-rnd-1195111491.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1171542977.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloade-1-ops-200000-rnd-974324922.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-169492415.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloade-1-ops-200000-rnd-307231219.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1872033011.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloade-1-ops-200000-rnd-1029965158.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-578940158.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloade-1-ops-200000-rnd-262126923.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-2042807304.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloade-1-ops-200000-rnd-172439487.txt
+sleep 300
+python ./bin/ycsb run mongodb -P workloads/workloadc -p recordcount=1000000 -p operationcount=40000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloadc-1-ops-200000-rnd-1156469472.txt
+python ./bin/ycsb run mongodb -P workloads/workloade -p recordcount=1000000 -p operationcount=200000 -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged -target 300 -threads 1 -p mongodb.url=mongodb://172.17.13.53:27017/ycsb > results/1-docker/1-docker-run-workloade-1-ops-200000-rnd-701022350.txt
+sleep 300
