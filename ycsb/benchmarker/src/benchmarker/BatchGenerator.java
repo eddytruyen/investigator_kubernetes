@@ -12,7 +12,7 @@ public class BatchGenerator {
 	
 	// mongodb://db1.example.net,db2.example.net:2500/?replicaSet=test
 	
-	private final static String OPTIONS = "-p mongodb.upsert=true -p mongodb.writeConcern=replica_acknowledged -p mongodb.readPreference=nearest";
+	private final static String OPTIONS = "-p mongodb.upsert=true"; // -p mongodb.writeConcern=replica_acknowledged -p mongodb.readPreference=nearest";
 	
 	private final static int THROUGHPUT = 300;
 	
@@ -118,7 +118,7 @@ public class BatchGenerator {
 			loadStr = "load";
 		
 		String command = "python ./bin/ycsb " +  loadStr + " mongodb" +  " -P workloads/" + workload 
-				+ " -threads " + 1 + " -t " + THROUGHPUT + " -p recordcount=" + NR_RECORDS + " -p operationcount=" + nr_operations + " " +  OPTIONS;
+				+ " -threads " + 1 + " -target " + THROUGHPUT + " -p recordcount=" + NR_RECORDS + " -p operationcount=" + nr_operations + " " +  OPTIONS;
 		
 		command += " " + "-p mongodb.url=mongodb://"+ databaseSetups.get(deployment).get(0) + "/ycsb";
 		
