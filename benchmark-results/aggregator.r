@@ -11,6 +11,8 @@ workloads.names <- c("workloada", "workloadb", "workloadc", "workloadd", "worklo
 workloads <- vector("list", length(workloads.names))
 names(workloads) <- workloads.names
 
+deployments <- vector("list", length(directories))
+names(deployments) <- directories
 
 # For each deployment, for each workload get all the measurements and aggregate.
 for(dir in directories) {
@@ -19,6 +21,11 @@ for(dir in directories) {
                      ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
   
   for(workload in workloads.names) {
-    workloads$workload = get_workload_data(workload)
+    data = get_workload_data(workload)
+    workloads[[workload]] <- data
   }
+  
+  deployments[[dir]] <- workloads
 }
+
+

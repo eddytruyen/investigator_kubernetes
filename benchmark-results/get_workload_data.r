@@ -38,12 +38,12 @@ get_workload_data <- function(workloadName) {
     for(measurement in names(measurements)) {
       # Might want to insert analyse here.
       # Not the entire data set
-      analyse(measurements[[measurement]])
-      data[[measurement]] <- c(data[[measurement]], list(measurements[[measurement]]))
+      latencies = analyse(measurements[[measurement]])
+      data[[measurement]] <- c(data[[measurement]], list(latencies))
     }
   }
   
-  print(data$read)
+  return(data)
 }
 
 # measurements <- c( "READ,1464009691013,79" ,   "READ,1464009691013,79",    "READ,1464009691014,83"  ,  "READ,1464009691014,84"   
