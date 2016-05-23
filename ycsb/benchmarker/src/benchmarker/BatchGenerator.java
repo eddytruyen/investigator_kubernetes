@@ -145,7 +145,7 @@ public class BatchGenerator {
 		if (loadPhase)
 			fileName = "results/"  + deployment + "/" + deployment + "-" + loadStr + "-" + workload + "-" + 1 + "-records-" + NR_RECORDS;
 		else
-			fileName = "results/"  + deployment + "/" + deployment + "-" + loadStr + "-" + workload + "-" + 1 + "-ops-" + NR_OPERATIONS;
+			fileName = "results/"  + deployment + "/" + deployment + "-" + loadStr + "-" + workload + "-" + 1 + "-ops-" + nr_operations;
 		
 		
 		String outputCmd = command + " > " + fileName + "-rnd-" + Math.abs(rnd.nextInt()) + ".txt";
