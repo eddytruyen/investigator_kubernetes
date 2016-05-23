@@ -28,4 +28,5 @@ for(dir in directories) {
   deployments[[dir]] <- workloads
 }
 
+boxplot(unlist(deployments$`./raw-results/localhost`$workloada$read[2]), ylim=range(1,650))
 
