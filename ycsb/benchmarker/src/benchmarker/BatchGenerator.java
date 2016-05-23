@@ -16,18 +16,18 @@ public class BatchGenerator {
 	
 	private final static int THROUGHPUT = 300;
 	
-	private final static int NR_OPERATIONS = 1000 * 200;
+	private final static int NR_OPERATIONS = 1000 * 100;
 	
 	// ~10GB of data
-	private final static int NR_RECORDS = 1000 * 1000;
+	private final static int NR_RECORDS = 1000 * 100;
 	
 	private final static int SAMPLE_RATE = 10;
 	
-	private final static int READ_WARMUP = 40000;
+	private final static int READ_WARMUP = 20000;
 	
-	private final static int TIMEOUT = 600;
+	private final static int TIMEOUT = 20;
 	
-	private final static int WORKLOAD_TIMEOUT = 300;
+	private final static int WORKLOAD_TIMEOUT = 20;
 	
 	private final static boolean REPLICA_SET = false;
 	
@@ -136,7 +136,7 @@ public class BatchGenerator {
 		if (!loadPhase)
 			command +=  " -target " + THROUGHPUT + " -threads " + 1;
 		else
-			command +=  " -threads 10";
+			command +=  " -threads 1";
 		
 		command += " " + "-p mongodb.url=mongodb://"+ databaseSetups.get(deployment).get(0) + "/ycsb";
 		
@@ -176,7 +176,7 @@ public class BatchGenerator {
 		// --eval "db.collection.remove();"
 		// verschillende usertables oplijsten
 		
-		String cmd = "mongo ycsb --eval \"db." + collection + ".remove({})\" --host " + databaseSetups.get(deployment).get(0) ;
+		String cmd = "mongo ycsb --eval \"db.dropDatabase()\" --host " + databaseSetups.get(deployment).get(0) ;
 		
 		System.out.println(cmd);
 		System.out.println(SLEEP_CMD + " " + TIMEOUT);
