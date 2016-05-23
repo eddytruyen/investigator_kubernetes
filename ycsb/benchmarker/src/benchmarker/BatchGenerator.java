@@ -12,9 +12,9 @@ public class BatchGenerator {
 	
 	// mongodb://db1.example.net,db2.example.net:2500/?replicaSet=test
 	
-	private final static String OPTIONS = "-p mongodb.upsert=true -p mongodb.writeConcern=acknowledged"; // -p mongodb.writeConcern=replica_acknowledged -p mongodb.readPreference=nearest";
+	private final static String OPTIONS = " -p measurementtype=raw -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged"; // -p mongodb.writeConcern=replica_acknowledged -p mongodb.readPreference=nearest";
 	
-	private final static int THROUGHPUT = 300;
+	private final static int THROUGHPUT = 3000;
 	
 	private final static int NR_OPERATIONS = 1000 * 100;
 	
@@ -59,12 +59,12 @@ public class BatchGenerator {
 
 		local.add("localhost:27017");
 		
-//		databaseSetups.put("localhost", local);
-		databaseSetups.put("1-native", native_mongo );
-		databaseSetups.put("1-docker", docker);
-		databaseSetups.put("1-swarm", swarm);
-		databaseSetups.put("1-kube", kube);
-		
+		databaseSetups.put("localhost", local);
+//		databaseSetups.put("1-native", native_mongo );
+//		databaseSetups.put("1-docker", docker);
+//		databaseSetups.put("1-swarm", swarm);
+//		databaseSetups.put("1-kube", kube);
+//		
 		
 		start();
 	}
