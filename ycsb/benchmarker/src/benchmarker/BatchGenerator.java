@@ -14,20 +14,20 @@ public class BatchGenerator {
 	
 	private final static String OPTIONS = " -p measurementtype=raw -p mongodb.upsert=true -p mongodb.writeConcern=acknowledged"; // -p mongodb.writeConcern=replica_acknowledged -p mongodb.readPreference=nearest";
 	
-	private final static int THROUGHPUT = 3000;
+	private final static int THROUGHPUT = 300;
 	
 	private final static int NR_OPERATIONS = 1000 * 100;
 	
 	// ~10GB of data
-	private final static int NR_RECORDS = 1000 * 100;
+	private final static int NR_RECORDS = 1000 * 1000;
 	
 	private final static int SAMPLE_RATE = 10;
 	
 	private final static int READ_WARMUP = 20000;
 	
-	private final static int TIMEOUT = 20;
+	private final static int TIMEOUT = 600;
 	
-	private final static int WORKLOAD_TIMEOUT = 20;
+	private final static int WORKLOAD_TIMEOUT = 300;
 	
 	private final static boolean REPLICA_SET = false;
 	
@@ -110,7 +110,7 @@ public class BatchGenerator {
 	 */
 	private void runWorkloads(String deployment, String workload, int nr_operations, int samples) {
 		for (int i=0; i < samples; i++) {
-			startWarmUp(deployment);
+//			startWarmUp(deployment);
 			runWorkloadOnce(deployment, workload, nr_operations, false);
 		}
 	}

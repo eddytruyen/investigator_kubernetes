@@ -32,6 +32,7 @@ get_workload_data <- function(workloadName) {
     }
     
     fileName = paste(dir, "/", file, sep="")
+    print(fileName)
     measurements = get_slices(fileName)
     
     # Copy the measurement for each type into the general workload data set, separated into read, insert etc..
