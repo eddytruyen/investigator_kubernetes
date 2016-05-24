@@ -6,13 +6,8 @@ split_measurement <- function(measurement) {
   return(sample)
 }
 
-analyse <- function(measurements) {
-  latencies = c()
-  
-  for(measurement in measurements) {
-    measurement = split_measurement(measurement)
-    latencies <- c(latencies, measurement)
-  }
+get_latencies <- function(measurements) {
+  latencies = unlist(lapply(measurements, split_measurement))
   
   return (latencies)
 }
@@ -39,7 +34,7 @@ get_workload_data <- function(workloadName) {
     for(measurement in names(measurements)) {
       # Might want to insert analyse here.
       # Not the entire data set
-      latencies = analyse(measurements[[measurement]])
+      latencies = get_latencies(measurements[[measurement]])
       data[[measurement]] <- c(data[[measurement]], list(latencies))
     }
   }
