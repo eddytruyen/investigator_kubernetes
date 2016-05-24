@@ -28,5 +28,7 @@ for(dir in directories) {
   deployments[[dir]] <- workloads
 }
 
-boxplot(unlist(deployments$`./raw-results/localhost`$workloada$read[2]), ylim=range(1,650))
+#boxplot(unlist(deployments$`./raw-results/localhost`$workloada$read[2]), ylim=range(1,650))
+x = unlist(deployments$`./raw-results/localhost`$workloada$read[2])
+hist(x[!x %in% boxplot.stats(x)$out],xlab="Latency",main="Workload A read latency")
 
