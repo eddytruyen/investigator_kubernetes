@@ -1,0 +1,4 @@
+mongo client connection created with mongodb://172.17.13.47:27017/ycsb?w=1
+Raw data measurement: will output to stdout.
+Raw data measurement: will output to stdout.
+Raw data measurement: will output to stdout.

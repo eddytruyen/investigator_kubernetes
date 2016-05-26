@@ -2,6 +2,7 @@ rm(list=ls())
 
 source(file="get_slices.r")
 source(file="get_workload_data.r")
+source(file="analyse.r")
 
 # Deployments
 directories = list.dirs(path = "./raw-results", full.names = TRUE, recursive = FALSE)
