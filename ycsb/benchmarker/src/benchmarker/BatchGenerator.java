@@ -19,9 +19,9 @@ public class BatchGenerator {
 	private final static int NR_OPERATIONS = 1000 * 100;
 	
 	// ~10GB of data
-	private final static int NR_RECORDS = 1000 * 1000;
+	private final static int NR_RECORDS = 1000 * 5000;
 	
-	private final static int SAMPLE_RATE = 10;
+	private final static int SAMPLE_RATE = 20;
 	
 	private final static int READ_WARMUP = 20000;
 	
@@ -59,11 +59,11 @@ public class BatchGenerator {
 
 		local.add("localhost:27017");
 		
-		databaseSetups.put("localhost", local);
-//		databaseSetups.put("1-native", native_mongo );
-//		databaseSetups.put("1-docker", docker);
-//		databaseSetups.put("1-swarm", swarm);
-//		databaseSetups.put("1-kube", kube);
+//		databaseSetups.put("localhost", local);
+		databaseSetups.put("1-native", native_mongo );
+		databaseSetups.put("1-docker", docker);
+		databaseSetups.put("1-swarm", swarm);
+		databaseSetups.put("1-kube", kube);
 //		
 		
 		start();
@@ -84,20 +84,35 @@ public class BatchGenerator {
 		for (String deployment: databaseSetups.keySet()) {
 			dropDatabase(deployment);
 			loadDatabase(deployment, "workloada", NR_RECORDS);
-			
-			startWarmUp(deployment);
-			
+		}
+		
+		for (String deployment: databaseSetups.keySet()) {			
 			runWorkloads(deployment, "workloada", NR_OPERATIONS, SAMPLE_RATE);
+		}
+		
+		for (String deployment: databaseSetups.keySet()) {
 			runWorkloads(deployment, "workloadb", NR_OPERATIONS, SAMPLE_RATE);
+		}
+		
+		for (String deployment: databaseSetups.keySet()) {
 			runWorkloads(deployment, "workloadc", NR_OPERATIONS, SAMPLE_RATE);
+		}
+		
+		for (String deployment: databaseSetups.keySet()) {
 			runWorkloads(deployment, "workloadf", NR_OPERATIONS, SAMPLE_RATE);
+		}
+		
+		for (String deployment: databaseSetups.keySet()) {
 			runWorkloads(deployment, "workloadd", NR_OPERATIONS, SAMPLE_RATE);
-			
+		}
+		
+		for (String deployment: databaseSetups.keySet()) {
 			dropDatabase(deployment);
 			loadDatabase(deployment, "workloade", NR_RECORDS);
 			
 			runWorkloads(deployment, "workloade", NR_OPERATIONS, SAMPLE_RATE);	
 		}
+		
 	}
 	
 	
