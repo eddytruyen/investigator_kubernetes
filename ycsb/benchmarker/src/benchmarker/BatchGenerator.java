@@ -16,18 +16,18 @@ public class BatchGenerator {
 	
 	private final static int THROUGHPUT = 300;
 	
-	private final static int NR_OPERATIONS = 1000 * 100;
+	private final static int NR_OPERATIONS = 1000 * 50;
 	
 	// ~10GB of data
 	private final static int NR_RECORDS = 1000 * 5000;
 	
-	private final static int SAMPLE_RATE = 20;
+	private final static int SAMPLE_RATE = 50;
 	
 	private final static int READ_WARMUP = 20000;
 	
 	private final static int TIMEOUT = 600;
 	
-	private final static int WORKLOAD_TIMEOUT = 300;
+	private final static int WORKLOAD_TIMEOUT = 60;
 	
 	private final static boolean REPLICA_SET = false;
 	
