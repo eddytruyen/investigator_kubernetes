@@ -1,3 +1,15 @@
+# Raw results
+benchmark-results/raw-results/*
+
+# Maven
+
+/target/
+
+# Ignore child project's targets as well
+/*/target/
+# And any grandchildren ...
+/*/*/target/
+
 # Files
 *.metadata
 *.DS_Store

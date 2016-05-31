@@ -5,7 +5,7 @@ aggregate_data <- function(measurement_data) {
   
   for (data in measurement_data) {
     measurements = unlist(data)
-    v = list(med=median(measurements), avg=mean(measurements), std=sd(measurements), maximum=max(measurements), minimum=min(measurements), quant=quantile(measurements, c(.95,.99)))
+    v = list(med=median(measurements), avg=mean(measurements), std=sd(measurements), maximum=max(measurements), minimum=min(measurements), quant=quantile(measurements, c(.95,.99,.999)))
     new_data <- c(new_data, list(v))
   }
   
@@ -23,7 +23,6 @@ analyse <- function(workload_data) {
   print(measurement_types)
   # Store aggregates for each type
   for(type in measurement_types) {
-    print(type)
     aggregated_data[[type]] = aggregate_data(workload_data[[type]])
   }
   

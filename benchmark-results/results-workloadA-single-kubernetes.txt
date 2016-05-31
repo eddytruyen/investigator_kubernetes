@@ -1,0 +1,47 @@
+Workload A Read (100K operations: 50% read, 1 million records)
+All results are in microseconds (e.g. 875us)
+
+       med        avg        std    maximum    minimum  quant.95%  quant.99% 
+   875.000   1299.921   4260.616 660894.000    476.000   3482.000   4974.440 
+       med        avg        std    maximum    minimum  quant.95%  quant.99% 
+   871.000   1387.116   4286.414 674043.000    471.000   3606.000   5353.450 
+       med      avg          std    maximum      minimum    quant.95%    quant.99% 
+   843.000   2247.461   80755.641 13912263.000 447.000   3814.200   8696.480 
+       med       avg         std    maximum     minimum   quant.95%   quant.99% 
+   857.000   1432.655   8788.623 1521178.000     452.000 3593.000   5077.350 
+       med        avg        std    maximum    minimum  quant.95%  quant.99% 
+   851.000   1342.833   2454.186 243115.000    452.000   3582.450   5052.000 
+        med       avg         std   maximum     minimum   quant.95%   quant.99% 
+   875.000   1473.738   15365.058 3251195.000  477.000    3580.800  5261.000 
+       med        avg        std    maximum    minimum  quant.95%  quant.99% 
+   845.000   1327.481   4455.977 472843.000    470.000   3511.050   4986.000 
+        med       avg         std   maximum     minimum   quant.95%   quant.99% 
+   856.000   1377.414   12545.472 2394584.000  497.000    3504.000  4980.000 
+       med        avg        std    maximum    minimum  quant.95%  quant.99% 
+   862.000   1366.892   2658.234 363944.000    479.000   3600.750   5000.000 
+       med        avg        std    maximum    minimum  quant.95%  quant.99% 
+   868.000   1667.685   4046.284 413169.000    474.000   4178.400  10021.700 
+
+Workload A Update (100K operations: 50% update, 1 million records)
+All results are in microseconds (e.g. 929us).
+
+       med        avg        std    maximum    minimum  quant.95%  quant.99% 
+   929.000   1461.341   6327.989 613536.000    532.000   3575.000   5066.200 
+       med        avg        std    maximum    minimum  quant.95%  quant.99% 
+   925.000   1565.590   7488.737 806724.000    532.000   3718.000   5547.440 
+        med       avg        std    maximum    minimum   quant.95%    quant.99% 
+   893.000   2666.185  87024.995 13644016.000 469.000   3994.000   9502.560 
+       med        avg        std    maximum    minimum   quant.95%   quant.99% 
+   911.000   1612.482   15847.693 2220942.000  512.000   3674.000   5204.000 
+       med        avg        std    maximum    minimum  quant.95%  quant.99% 
+   906.000   1537.745   6803.648 589331.000    515.000   3667.000   5215.530 
+       med        avg        std    maximum    minimum  quant.95%  quant.99% 
+   931.000   1605.294   7613.305 652413.000    526.000   3687.000   5453.060 
+       med        avg        std    maximum    minimum  quant.95%  quant.99% 
+   896.000   1443.943   6109.319 546544.000    547.000   3591.000   5133.000 
+       med        avg        std    maximum    minimum   quant.95%   quant.99% 
+   908.000   1624.944   31810.687 6769865.000     503.000    3609.000    5156.580 
+       med        avg        std    maximum    minimum   quant.95%  quant.99% 
+   917.000   1574.613   7819.918 710937.000    504.000   3688.350   5129.540 
+       med        avg        std    maximum    minimum   quant.95%   quant.99% 
+   922.000   1768.404   7292.856 1091841.000   528.000   4181.400   9281.800 
