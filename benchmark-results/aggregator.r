@@ -23,6 +23,7 @@ for(dir in directories) {
   
   for(workload in workloads.names) {
     data = get_workload_data(workload)
+    data$analysed = analyse(data)
     workloads[[workload]] <- data
   }
   
@@ -33,3 +34,16 @@ for(dir in directories) {
 #x = unlist(deployments$`./raw-results/localhost`$workloada$read[2])
 #hist(x[!x %in% boxplot.stats(x)$out],xlab="Latency",main="Workload A read latency")
 
+for(workload.name in workloads.names) {
+  for(deployment.name in deployments.names) {
+    data = deployments[[deployment]][[workload]]
+    # new file workloadA-deployment
+    write("", file=paste(workload.name,"-",deployment.name))
+    for(x in names(data[[analysed]])) {
+      # e.g. read
+      data = deployment[[analysed]][[x]]
+      
+      
+    }
+  }
+}

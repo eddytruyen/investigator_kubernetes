@@ -10,6 +10,13 @@ benchmark-results/raw-results/*
 # And any grandchildren ...
 /*/*/target/
 
+
+*.RData
+*.Rhistory
+
+# Tar backups
+benchmark-results/backup/*
+
 # Files
 *.metadata
 *.DS_Store
