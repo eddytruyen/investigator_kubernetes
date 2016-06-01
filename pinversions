@@ -1,0 +1,3 @@
+echo "linux-image-extra-$(uname -r) hold" | sudo dpkg --set-selections
+echo "docker-engine hold" | sudo dpkg --set-selections
+echo "apparmor hold"  | sudo dpkg --set-selections
