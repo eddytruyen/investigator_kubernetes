@@ -1,3 +1,4 @@
 sudo apt-get install sysstat -y
+./pinversion-sysstat
 
 
