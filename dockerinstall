@@ -6,7 +6,7 @@ sudo apt-get update
 apt-cache policy docker-engine
 sudo apt-get install linux-image-extra-$(uname -r) -y
 sudo apt-get install apparmor -y
-sudo apt-get install docker-engine -y
+sudo apt-get install docker-engine=1.11.1-0~trusty -y
 sudo service docker start
 sudo groupadd docker
 sudo usermod -aG docker ubuntu

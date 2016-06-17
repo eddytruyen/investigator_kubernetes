@@ -217,7 +217,7 @@ start_k8s(){
         -v /:/rootfs:ro \
         -v /var/lib/docker/:/var/lib/docker:rw \
         -v /var/lib/kubelet/:/var/lib/kubelet:rw \
-        gcr.io/google_containers/hyperkube:v${K8S_VERSION} \
+        decomads/hyperkube:v${K8S_VERSION} \
         /hyperkube kubelet \
             --address=0.0.0.0 \
             --allow-privileged=true \
@@ -227,14 +227,17 @@ start_k8s(){
             --cluster-dns=10.0.0.10 \
             --cluster-domain=cluster.local \
             --containerized \
+            --cloud-provider=openstack \
+            --cloud-config=/etc/kubernetes/cloud_config \
             --v=2
+
 
     docker run \
         -d \
         --net=host \
         --privileged \
         --restart=on-failure \
-        gcr.io/google_containers/hyperkube:v${K8S_VERSION} \
+        decomads/hyperkube:v${K8S_VERSION} \
         /hyperkube proxy \
             --master=http://127.0.0.1:8080 \
             --v=2

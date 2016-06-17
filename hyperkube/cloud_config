@@ -1,0 +1,7 @@
+#copy this file to kubernetes/cluster/images/hyperkube
+[Global]
+auth-url=http://dnetcloud.cs.kuleuven.be:5000/v2.0
+username=eddy
+region=RegionOne
+password=garage4bout7Monday
+tenant-id=139894a942a04bc2bfb6591beeb349f6
