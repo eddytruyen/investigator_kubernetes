@@ -1,4 +1,3 @@
-#copy this file to kubernetes/cluster/images/hyperkube
 FROM debian:jessie
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update -y \

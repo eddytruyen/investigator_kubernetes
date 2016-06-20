@@ -31,7 +31,5 @@ spec:
           name: mypd
       volumes:
         - name: mypd
-          cinder:
-            volumeID: ce47a25a-87f8-4895-b485-a6c86bbf906f
-            fsType: ext4
-             
+          persistentVolumeClaim:
+             claimName: myclaim-1
