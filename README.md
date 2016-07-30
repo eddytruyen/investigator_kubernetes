@@ -19,7 +19,7 @@ Some interesting pages to look into:
 
 * Installation scripts for reproducing experimental test setups: 
   * Performance evaluation of container orchestration frameworks with NoSQL databases as case study
-    * [Experiment A](wiki/Information-for-reproducing-the-test-setup-of-Experiment-A)
+    * [Experiment A](../../wiki/Information-for-reproducing-the-test-setup-of-Experiment-A)
  
   
 
