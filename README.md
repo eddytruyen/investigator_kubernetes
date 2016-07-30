@@ -17,6 +17,7 @@ Some interesting pages to look into:
 
 * Integration with openstack: 
   * [Automated migration of Cinder volumes using Flocker](../../wiki/My-experiences-with-getting-kubernetes-and-cinder-to-work-together)
+  * [Portable multi-node Kubernetes + Flocker](https://github.com/eddytruyen/kube-deploy/tree/master/docker-multinode)
 
 * Installation scripts for reproducing experimental test setups: 
   * Performance evaluation of container orchestration frameworks with NoSQL databases as case study
