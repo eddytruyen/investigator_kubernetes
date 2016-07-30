@@ -4,13 +4,13 @@
     name: pv0001
   spec:
     capacity:
-      storage: 5Gi
+      storage: 50Gi
     accessModes:
       - ReadWriteOnce
       - ReadWriteMany
-    cinder:
-      fsType: ext4
-      volumeID: 21391666-e990-455c-9f0a-cc79d56455ec
+    flocker:
+      datasetName: my-volume
+
  
 
 

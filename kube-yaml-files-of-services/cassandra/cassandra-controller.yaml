@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  labels:
+    name: cassandra
+  name: cassandra
+spec:
+  replicas: 1
+  selector:
+    name: cassandra
+  template:
+    metadata:
+      labels:
+        name: cassandra
+    spec:
+      containers:
+        - image: cassandra:2.0
+          name: cassandra
+          ports:
+            - containerPort: 9042
+              hostPort: 9042
+              name: cql
+            - containerPort: 9160
+              hostPort: 9160
+              name: thrift
+          volumeMounts:
+            - mountPath: /var/lib/cassandra
+              name: mypd
+      nodeSelector:
+        cassandraHost: "true"
+      volumes:
+        - name: mypd
+          hostPath:
+            path: /data/cassandra/db
+

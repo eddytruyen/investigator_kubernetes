@@ -1,0 +1,1 @@
+echo "clusterhq-flocker-cli hold"  | sudo dpkg --set-selections

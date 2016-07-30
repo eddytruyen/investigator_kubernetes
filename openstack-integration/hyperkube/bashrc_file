@@ -1,0 +1,17 @@
+#in bashrc file of root
+export K8S_VERSION=1.1.7
+export FLANNEL_VERSION=0.5.5
+export FLANNEL_IFACE=eth0
+export FLANNEL_IPMASQ=false
+export MASTER_IP=172.17.13.43
+
+#in bash rc file of ubuntu
+export K8S_VERSION=1.1.7
+export FLANNEL_VERSION=0.5.5
+export FLANNEL_IFACE=eth0
+export FLANNEL_IPMASQ=false
+export MASTER_IP=172.17.13.43
+
+PATH=$PATH:/home/ubuntu
+export PATH
+

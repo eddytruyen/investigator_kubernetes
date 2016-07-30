@@ -1,0 +1,3 @@
+sudo service flocker-control start
+sudo ufw allow flocker-control-api
+sudo ufw allow flocker-control-agent

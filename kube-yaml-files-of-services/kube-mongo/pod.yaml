@@ -1,0 +1,76 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    kubernetes.io/created-by: |
+      {"kind":"SerializedReference","apiVersion":"v1","reference":{"kind":"ReplicationController","namespace":"default","name":"mongo-controller","uid":"fd492854-54c6-11e6-b87f-fa163e1fdbb4","apiVersion":"v1","resourceVersion":"1825"}}
+  creationTimestamp: 2016-07-28T14:41:06Z
+  generateName: mongo-controller-
+  labels:
+    name: mongo
+  name: mongo-controller-wnxzi
+  namespace: default
+  resourceVersion: "1832"
+  selfLink: /api/v1/namespaces/default/pods/mongo-controller-wnxzi
+  uid: 513ea22c-54d1-11e6-b87f-fa163e1fdbb4
+spec:
+  containers:
+  - command:
+    - mongod
+    - --logappend
+    - --logpath
+    - /var/log/mongodb/mongod.log
+    - --bind_ip
+    - 0.0.0.0
+    image: mongo:3.2.4
+    imagePullPolicy: IfNotPresent
+    name: mongo
+    ports:
+    - containerPort: 27017
+      hostPort: 27017
+      name: mongo
+      protocol: TCP
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    volumeMounts:
+    - mountPath: /data/db
+      name: mypd
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-d98gm
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  nodeName: 172.17.13.46
+  restartPolicy: Always
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  volumes:
+  - name: mypd
+    persistentVolumeClaim:
+      claimName: myclaim-1
+  - name: default-token-d98gm
+    secret:
+      secretName: default-token-d98gm
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: 2016-07-28T14:41:06Z
+    message: 'containers with unready status: [mongo]'
+    reason: ContainersNotReady
+    status: "False"
+    type: Ready
+  containerStatuses:
+  - image: mongo:3.2.4
+    imageID: ""
+    lastState: {}
+    name: mongo
+    ready: false
+    restartCount: 0
+    state:
+      waiting:
+        message: 'Image: mongo:3.2.4 is ready, container is creating'
+        reason: ContainerCreating
+  hostIP: 172.17.13.46
+  phase: Pending
+  startTime: 2016-07-28T14:41:06Z

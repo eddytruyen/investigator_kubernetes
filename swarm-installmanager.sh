@@ -1,4 +1,3 @@
-/home/ubuntu/kubernetes_on_openstack/clean-reinstall-docker-post-reboot.sh
 sudo service docker stop
 sudo rm nohup.out
 sudo nohup docker daemon -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock &

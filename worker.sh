@@ -31,6 +31,7 @@ FLANNEL_VERSION=${FLANNEL_VERSION:-"0.5.5"}
 FLANNEL_IFACE=${FLANNEL_IFACE:-"eth0"}
 FLANNEL_IPMASQ=${FLANNEL_IPMASQ:-"true"}
 ARCH=${ARCH:-"amd64"}
+REGISTRY=${REGISTRY:-"gcr.io/google_containers"}
 
 # Run as root
 if [ "$(id -u)" != "0" ]; then
@@ -197,7 +198,7 @@ start_k8s() {
         -v /:/rootfs:ro \
         -v /var/lib/docker/:/var/lib/docker:rw \
         -v /var/lib/kubelet/:/var/lib/kubelet:rw \
-        decomads/hyperkube-${ARCH}:v${K8S_VERSION} \
+        ${REGISTRY}/hyperkube:v${K8S_VERSION} \
         /hyperkube kubelet \
             --allow-privileged=true \
             --api-servers=http://${MASTER_IP}:8080 \
@@ -206,8 +207,6 @@ start_k8s() {
             --cluster-dns=10.0.0.10 \
             --cluster-domain=cluster.local \
             --containerized \
-            --cloud-provider=openstack \
-            --cloud-config=/etc/kubernetes/cloud_config \
             --v=2
 
     docker run \
@@ -215,7 +214,7 @@ start_k8s() {
         --net=host \
         --privileged \
         --restart=on-failure \
-        decomads/hyperkube-${ARCH}:v${K8S_VERSION} \
+        ${REGISTRY}/hyperkube:v${K8S_VERSION} \
         /hyperkube proxy \
             --master=http://${MASTER_IP}:8080 \
             --v=2
