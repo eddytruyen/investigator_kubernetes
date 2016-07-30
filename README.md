@@ -12,9 +12,14 @@ Specific pages of this wiki are dedicated to providing information to fellow res
 
 Some interesting pages to look into:
 
-[Portable multi-node Kubernetes-cluster](https://github.com/kubernetes/kube-deploy/tree/master/docker-multinode)
+* [Portable multi-node Kubernetes-cluster using Docker](https://github.com/kubernetes/kube-deploy/tree/master/docker-multinode)
 
-Integration with openstack: 
+* Integration with openstack: 
+  * [Automated migration of Cinder volumes using Flocker](https://github.com/eddytruyen/kubernetes_on_openstack/wiki/My-experiences-with-getting-kubernetes-and-cinder-to-work-together)
 
-* [Automated migration of Cinder volumes using Flocker](https://github.com/eddytruyen/kubernetes_on_openstack/wiki/My-experiences-with-getting-kubernetes-and-cinder-to-work-together)
+* Installation scripts for reproducing experimental test setups: 
+  * Performance evaluation of container orchestration frameworks with NoSQL databases as case study
+    * [Experiment A](wiki/Information-for-reproducing-the-test-setup-of-Experiment-A)
+ 
+  
 
