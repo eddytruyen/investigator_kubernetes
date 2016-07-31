@@ -1,21 +1,20 @@
 # Kubernetes on Openstack
 
-Let me introduce myself: I am a researcher on middleware focusing on customization and dynamic reconfiguration of modular software services. You can find me at https://distrinet.cs.kuleuven.be/people/eddy.
+This project aims to evaluate container orchestration middleware for its support for multi-tenant SaaS applications and to investigate what implications the popularity of [Docker](https://docs.docker.com/) containers will have on the architecture of SaaS applications.
 
-I am involved in a cloud computing research project where we evaluate container orchestration middleware for its support for multi-tenant SaaS applications and where we will investigate what implications the popularity of [Docker](https://docs.docker.com/) containers will have on the architecture of SaaS applications.
-
-More specifically, the goal of my current research in this project is to analyze the performance, cost-efficiency and scalability of  popular container orchestration systems such as [Kubernetes](http://kubernetes.io/) and [Docker Swarm](https://docs.docker.com/swarm/) in a standard virtualization-based cloud computing environment. In this case, my base cloud environment is an openstack private cloud: https://www.openstack.org/
+More specifically, the goal is to analyze the performance, cost-efficiency and scalability of  popular container orchestration systems such as [Kubernetes](http://kubernetes.io/) and [Docker Swarm](https://docs.docker.com/swarm/) in a standard virtualization-based cloud computing environment. In this case, our base cloud environment is an openstack private cloud: https://www.openstack.org/
 
 The primary goals of this github project are:
-- Creating a wiki that collects my experiences with container orchestration systems in an Openstack environment, so I don't forget about the lessons learned.  Hopefully others benefit from this too.
-- Specific pages of this wiki are dedicated to providing information to fellow researchers so they can reproduce my experimental test setups. These pages link to installation scripts that I have used to bootstrap container orchestration systems. 
+- Creating a wiki that collects our experiences with container orchestration systems in an Openstack environment, so I don't forget about the lessons learned.  Hopefully others benefit from this too.
+- Specific pages of the wiki are dedicated to providing experimental data to fellow researchers so they can reproduce our experimental test setups. These pages link to installation scripts that we have used to bootstrap container orchestration systems. 
 
 
 Some interesting pages to look into:
 
 * [Portable multi-node Kubernetes-cluster using Docker](https://github.com/kubernetes/kube-deploy/tree/master/docker-multinode)
 
-* Integration with openstack: 
+* Integration with openstack:
+  * [Integration with the openstack cloud-provider](../../wiki/Openstack-integration-and-Cinder}
   * [Automated migration of Cinder volumes using Flocker](../../wiki/Installing-Flocker-for-automated-volume-migration)
   * [Portable multi-node Kubernetes + Flocker](https://github.com/eddytruyen/kube-deploy/tree/master/docker-multinode)
 
