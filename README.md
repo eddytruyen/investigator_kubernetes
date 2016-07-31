@@ -14,7 +14,7 @@ Some interesting pages to look into:
 * [Portable multi-node Kubernetes-cluster using Docker](https://github.com/kubernetes/kube-deploy/tree/master/docker-multinode)
 
 * Integration with openstack:
-  * [Integration with the openstack cloud-provider](../../wiki/Openstack-integration-and-Cinder}
+  * [Integration with the openstack cloud-provider](../../wiki/Openstack-integration-and-Cinder)
   * [Automated migration of Cinder volumes using Flocker](../../wiki/Installing-Flocker-for-automated-volume-migration)
   * [Portable multi-node Kubernetes + Flocker](https://github.com/eddytruyen/kube-deploy/tree/master/docker-multinode)
 
