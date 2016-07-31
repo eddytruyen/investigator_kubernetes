@@ -1,52 +1,26 @@
 # Kubernetes on Openstack
 
-## Installation manual using Juju
+This project aims to evaluate container orchestration middleware for its support for multi-tenant SaaS applications and to investigate what implications the popularity of [Docker](https://docs.docker.com/) containers will have on the architecture of SaaS applications.
 
-See https://github.com/eddytruyen/kubernetes_on_openstack/wiki/Deploying-a-multinode-kubernetes-cluster-on-openstack-via-juju
+More specifically, the goal is to analyze the performance, cost-efficiency and scalability of  popular container orchestration systems such as [Kubernetes](http://kubernetes.io/) and [Docker Swarm](https://docs.docker.com/swarm/) in a standard virtualization-based cloud computing environment. In this case, our base cloud environment is an openstack private cloud: https://www.openstack.org/
 
-### Juju 
-
-See https://github.com/mbruzek/layer-k8s, http://containers.juju.solutions/
-
-#### Failed kube-dns add-on 
-
-This service is currently not working properly. See https://github.com/mbruzek/layer-k8s/issues/26
-
-Therefore service discovery does not work in this cluster setup. Docker environment variables are neither configured.
-
-Hence:
-
-1. kube-dns add-on needs to be deleted
-2. Not sure how kubelet proxies need to be configured so they don't perform ns lookups?
-3. service IPs need to be linked to service names via other ways, preferably etc/hosts or configuration file of a WAR archive. 
-
-## Services deployed
-
-Externally exposed services are currently of type `NodePort`. type `LoadBalancer` is not possible currently. See https://github.com/eddytruyen/kubernetes_on_openstack/wiki/How-to-expose-a-kubernetes-cluster-of-tomcat-servers-via-an-external-load-balancer-in-Openstack%3F for more information how to manually configure a load balancer in openstack.
-
-### Tomcat 8.32 - jre7  service
-yaml files: https://github.com/eddytruyen/kubernetes_on_openstack/tree/master/kube-yaml-files-of-services/tomcat
-
-See https://github.com/eddytruyen/kubernetes_on_openstack/wiki/How-to-expose-a-kubernetes-cluster-of-tomcat-servers-via-an-external-load-balancer-in-Openstack%3F for more information how to manually configure a load balancer in openstack.
-
-### Mongo 
-See https://github.com/eddytruyen/kubernetes_on_openstack/tree/master/kube-yaml-files-of-services/mongo
-
-First label a node of the kubernetes cluster on which you want to deploy the mongod instance: `kubectl label nodes <node-name> mongodbHost="true"`. The mongod instance must always be deployed on that node because it is linked to a directory on the node where the data is stored. 
-
-Then create the service. The service is of type `NodePort` in order to ensure that the mongodb instance can be accessed from an external floating IP. (type `LoadBalancer` is not possible currently. See https://github.com/eddytruyen/kubernetes_on_openstack/wiki/How-to-expose-a-kubernetes-cluster-of-tomcat-servers-via-an-external-load-balancer-in-Openstack%3F for more information how to migitate this issue)
-
-Then create the mongodb_with_hostpath_volume controller.
+The primary goals of this github project are:
+- Creating a wiki that collects our experiences with container orchestration systems in an Openstack environment, so I don't forget about the lessons learned.  Hopefully others benefit from this too.
+- Specific pages of the wiki are dedicated to providing experimental data to fellow researchers so they can reproduce our experimental test setups. These pages link to installation scripts that we have used to bootstrap container orchestration systems. 
 
 
-To deploy a sample web app that uses the Mongo service, see: https://medium.com/google-cloud/running-a-mean-stack-on-google-cloud-platform-with-kubernetes-149ca81c2b5d#.tgppaweqi. This article is written for deployment on top of google cloud. To deploy on openstack, do as follows:
-- create a docker repository named `decomads`in any docker registry, in this case I use docker hub
-- `docker build -t myapp .`
-- `docker login`
-- `docker push decomads/myapp` 
+Some interesting pages to look into:
 
-As service discovery does not work (see failed kube-dns add-on), find other means for resolving the mongo service into an IP. In this case I simply put the IP of the Mongo service in the code of the `app.js` file.
+* [Portable multi-node Kubernetes-cluster using Docker](https://github.com/kubernetes/kube-deploy/tree/master/docker-multinode)
 
-See https://github.com/eddytruyen/kubernetes_on_openstack/tree/master/kube-yaml-files-of-services/NodeJS-Sample-App for Docker and yaml files.
+* Integration with openstack:
+  * [Integration with the openstack cloud-provider](../../wiki/Openstack-integration-and-Cinder}
+  * [Automated migration of Cinder volumes using Flocker](../../wiki/Installing-Flocker-for-automated-volume-migration)
+  * [Portable multi-node Kubernetes + Flocker](https://github.com/eddytruyen/kube-deploy/tree/master/docker-multinode)
 
+* Installation scripts for reproducing experimental test setups: 
+  * Performance evaluation of container orchestration frameworks with NoSQL databases as case study
+    * [Experiment A](../../wiki/Information-for-reproducing-the-test-setup-of-Experiment-A)
+ 
+  
 
