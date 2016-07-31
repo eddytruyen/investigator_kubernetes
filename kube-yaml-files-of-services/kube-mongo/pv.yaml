@@ -10,7 +10,6 @@
       - ReadWriteMany
     flocker:
       datasetName: my-volume
-
  
 
 
